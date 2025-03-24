@@ -1,6 +1,6 @@
 package org.example.Util;
 
-public class StudentHelper {
+public class Helper {
 
     // Check if a string is null or empty
     public static boolean isNullOrEmpty(String value) {

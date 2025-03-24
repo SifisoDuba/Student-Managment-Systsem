@@ -3,18 +3,8 @@ package org.example.Factory;
 // StudentNumber 222671173 //
 // Group 3D //
 import org.example.Entity.Student;
-import org.example.Util.StudentHelper;
 
 public class StudentFactory{
-
-
-
-
-
-
-
-
-
 
     //overloading the constuctor//
     public static Student createStudent(String StudentID, String StudentName, String Gender,String Email ) {
