@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Entity.Student;
+import org.example.Factory.StudentFactory;
 import org.example.Entity.Course;
 import org.example.Factory.CourseFactory;
 import org.example.Repository.CourseRepository;
@@ -33,7 +35,7 @@ public class Main {
         Classroom classroom2 =  ClassroomFactory.createClassroom("A246","150","Engineering");
   
       
-      //Laeeqah main class code
+       //Laeeqah main class code
 
         Course aCourse = CourseFactory.createCourse(
                 "1234",
@@ -52,6 +54,18 @@ public class Main {
 
         Course fetchedCourse = repository.getCourseById("1234");
         System.out.println("Fetched Course: " + fetchedCourse);
+      
+      
+        //Itumeleng main class Code 
+        Student aStudent = StudentFactory.createStudent(
+                "1999",
+                "Itu",
+                "Male",
+                "Itumeleng@Gmail.com"
+        );
+        if (aStudent != null) {
+            System.out.println(aStudent);
+        }
 
     }
 }
