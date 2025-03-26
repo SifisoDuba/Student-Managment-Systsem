@@ -1,11 +1,17 @@
 package org.example;
 
-
-
+import org.example.Entity.Course;
+import org.example.Factory.CourseFactory;
+import org.example.Repository.CourseRepository;
 import org.example.Entity.Instructor;
 import org.example.Factory.InstructorFactory;
 import org.example.Entity.Classroom;
 import org.example.Factory.ClassroomFactory;
+
+//Laeeqah-Arendse---230055923
+// Author: Laeeqah Arendse
+// Student Number: 230055923
+// Group 3D
 
 public class Main {
     public static void main(String[] args) {
@@ -25,10 +31,27 @@ public class Main {
         Classroom classroom =  ClassroomFactory.createClassroom("A124","155",35,
                                                                 true,"Engineering");
         Classroom classroom2 =  ClassroomFactory.createClassroom("A246","150","Engineering");
+  
+      
+      //Laeeqah main class code
 
-        System.out.println(classroom);
-        System.out.println(classroom2);
+        Course aCourse = CourseFactory.createCourse(
+                "1234",
+                "Application Development",
+                "ND: ICT",
+                3,
+                "I001"
+        );
 
+        if (aCourse != null) {
+            System.out.println(aCourse);
         }
 
+        CourseRepository repository = new CourseRepository();
+        repository.addCourse(aCourse);
+
+        Course fetchedCourse = repository.getCourseById("1234");
+        System.out.println("Fetched Course: " + fetchedCourse);
+
     }
+}
