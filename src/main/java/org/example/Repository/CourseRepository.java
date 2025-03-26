@@ -5,28 +5,51 @@ package org.example.Repository;
 // Group 3D
 
 import org.example.Entity.Course;
-import java.util.HashSet;
-import java.util.Set;
+import org.example.Entity.Student;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CourseRepository {
-    private final Set<Course> courseSet = new HashSet<>();
+    private List<Course> courseList = new ArrayList<>();
 
-    public void addCourse(Course course) {
-        courseSet.add(course);
+
+    //Create //
+    public Course createCourse(Course course) {
+        courseList.add(course);
+        return course;
     }
-
-    public Course getCourseById(String id) {
-        return courseSet.stream()
-                .filter(course -> course.getId().equals(id))
+    // Read
+    public Course read(String courseID) {
+        return courseList.stream()
+                .filter(course -> course.getId().equals(courseID))
                 .findFirst()
                 .orElse(null);
     }
 
-    public boolean removeCourse(String id) {
-        return courseSet.removeIf(course -> course.getId().equals(id));
+    // Update
+    public Course update(Course updatedCourse) {
+        Course existingCourse = read(updatedCourse.getId());
+        if (existingCourse != null) {
+            courseList.remove(existingCourse);
+            courseList.add(updatedCourse);
+            return updatedCourse;
+        }
+        return null;
     }
 
-    public Set<Course> getAllCourses() {
-        return new HashSet<>(courseSet);
+    // Delete
+    public boolean delete(String courseID) {
+        Course course = read(courseID);
+        if (course != null) {
+            courseList.remove(course);
+            return true;
+        }
+        return false;
+    }
+
+    // Get All
+    public List<Course> getAll() {
+        return new ArrayList<>(courseList);
     }
 }

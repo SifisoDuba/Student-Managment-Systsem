@@ -17,7 +17,12 @@ import org.example.Factory.ClassroomFactory;
 
 public class Main {
     public static void main(String[] args) {
-      
+
+        //Kgotsofatso main class code
+        //Kgotsofatso-Bojatseha-222830190
+        System.out.println("fatso");
+
+
       //Bennet main class code
 
         Instructor instructor = InstructorFactory.createFullInstructor("#234560",
@@ -29,12 +34,12 @@ public class Main {
 
 
         //Sifiso main class code
-      
+
         Classroom classroom =  ClassroomFactory.createClassroom("A124","155",35,
                                                                 true,"Engineering");
         Classroom classroom2 =  ClassroomFactory.createClassroom("A246","150","Engineering");
-  
-      
+
+
        //Laeeqah main class code
 
         Course aCourse = CourseFactory.createCourse(
@@ -49,14 +54,9 @@ public class Main {
             System.out.println(aCourse);
         }
 
-        CourseRepository repository = new CourseRepository();
-        repository.addCourse(aCourse);
 
-        Course fetchedCourse = repository.getCourseById("1234");
-        System.out.println("Fetched Course: " + fetchedCourse);
-      
-      
-        //Itumeleng main class Code 
+
+        //Itumeleng main class Code
         Student aStudent = StudentFactory.createStudent(
                 "1999",
                 "Itu",
