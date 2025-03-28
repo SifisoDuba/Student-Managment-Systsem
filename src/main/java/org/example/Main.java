@@ -19,11 +19,12 @@ public class Main {
     public static void main(String[] args) {
       
         //Kgotsofatso main class code
-        Kgotsofatso-Bojatseha-222830190
-        System.out.println("fatso");
+        /*Kgotsofatso-Bojatseha-222830190
+        System.out.println("fatso");*/
 
 
       //Bennet main class code
+
 
         Instructor instructor = InstructorFactory.createFullInstructor("#234560",
                 "Sifiso","Duba","dubas@mycput.ac.za" +
