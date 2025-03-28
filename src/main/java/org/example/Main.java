@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
       
         //Kgotsofatso main class code
-        Kgotsofatso-Bojatseha-222830190
+        //Kgotsofatso-Bojatseha-222830190
         System.out.println("fatso");
 
 
