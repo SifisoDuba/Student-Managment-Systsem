@@ -1,6 +1,5 @@
 package org.example.Repository;
 
-
 public interface IRepository<T, ID> {
         T create(T t);
 
@@ -10,4 +9,5 @@ public interface IRepository<T, ID> {
 
         boolean delete(ID id);
 }
+
 
