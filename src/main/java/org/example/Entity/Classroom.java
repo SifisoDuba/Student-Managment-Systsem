@@ -1,17 +1,21 @@
 package org.example.Entity;
 
+import java.util.ArrayList;
+
 public class Classroom {
     private String classroomID;
     private String classroomNumber;
-    private int capacity;
+    private String capacity;
     private Boolean isLab;
     private String building;
+    private ArrayList<Instructor> instructors;
 
     public Classroom() {
 
+
     }
 
-    private Classroom(String classroomID, String classroomNumber, int capacity, Boolean isLab, String building) {
+    public Classroom(String classroomID, String classroomNumber, String capacity, Boolean isLab, String building) {
         this.classroomID = classroomID;
         this.classroomNumber = classroomNumber;
         this.capacity = capacity;
@@ -19,7 +23,7 @@ public class Classroom {
         this.building = building;
     }
 
-    private String getClassroomID() {
+    public String getClassroomID() {
 
         return classroomID;
     }
@@ -35,7 +39,7 @@ public class Classroom {
     }
 
 
-    public int getCapacity() {
+    public String getCapacity() {
 
         return capacity;
     }
@@ -44,6 +48,11 @@ public class Classroom {
 
         return classroomNumber;
     }
+
+    public Classroom copy() {
+        return new Classroom(this.classroomID, this.classroomNumber, this.capacity, this.isLab, this.building);
+    }
+
 
     @Override
     public String toString() {
@@ -58,20 +67,30 @@ public class Classroom {
     public static class Builder{
         private String classroomID;
         private String classroomNumber;
-        private int capacity;
+        private String capacity;
         private Boolean isLab;
         private String building;
 
         public Builder(){
 
         }
-        public Builder(String classroomID, String classroomNumber, int capacity, Boolean isLab, String building) {
+        public Builder(String classroomID, String classroomNumber, String capacity, Boolean isLab, String building) {
             this.classroomID = classroomID;
             this.classroomNumber = classroomNumber;
             this.capacity = capacity;
             this.isLab = isLab;
             this.building = building;
         }
+
+        public Builder copy(Classroom classroom) {
+            this.classroomID = classroom.getClassroomID();
+            this.classroomNumber = classroom.getClassroomNumber();
+            this.capacity = classroom.getCapacity();
+            this.isLab = classroom.getLab();
+            this.building = classroom.getBuilding();
+            return this;
+        }
+
         public Builder setClassroomID(String classroomID) {
             this.classroomID = classroomID;
             return this;
@@ -80,7 +99,7 @@ public class Classroom {
             this.classroomNumber = classroomNumber;
             return this;
         }
-        public Builder setCapacity(int capacity) {
+        public Builder setCapacity(String capacity) {
             this.capacity = capacity;
             return this;
         }
@@ -96,5 +115,7 @@ public class Classroom {
 
             return new Classroom(classroomID, classroomNumber, capacity, isLab, building);
         }
+
+
     }
 }
