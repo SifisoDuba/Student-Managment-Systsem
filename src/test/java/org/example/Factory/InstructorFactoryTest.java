@@ -24,7 +24,7 @@ class InstructorFactoryTest {
 
     @org.junit.jupiter.api.Test
     void creatyeInstructorCareer() {
-        Instructor instructor = InstructorFactory.creatyeInstructorCareer("Software Engineering",
+        Instructor instructor = InstructorFactory.createInstructorCareer("Software Engineering",
                 "Application Development");
         System.out.println(instructor);
     }
