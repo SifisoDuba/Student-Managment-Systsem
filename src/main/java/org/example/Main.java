@@ -17,60 +17,28 @@ import org.example.Factory.ClassroomFactory;
 
 public class Main {
     public static void main(String[] args) {
-      
-        //Kgotsofatso main class code
-        Kgotsofatso-Bojatseha-222830190
-        System.out.println("fatso");
+
+       // System.out.println("fatso");
 
 
       //Bennet main class code
 
-        Instructor instructor = InstructorFactory.createFullInstructor("#234560",
-                "Sifiso","Duba","dubas@mycput.ac.za" +
-                ".za"
+        Instructor instructor1 = InstructorFactory.createFullInstructor("#2468",
+                "Sifiso","Duba","dubas@mycput.ac.za"
                 ,"Software Engineering",
                 "Application Development");
-        System.out.println(instructor);
+        Instructor instructor2 = InstructorFactory.createInstructorDetails("#8642",
+                "Lwazi","Shozi","lwazi@mycput.ac.za");
+
+       if (instructor1 != null) {
+           System.out.println("---------------------------------------------------------");
+           System.out.println(instructor1);
+           System.out.println("---------------------------------------------------------");
+           System.out.println(instructor2);
+           System.out.println("---------------------------------------------------------");
+       }
 
 
-        //Sifiso main class code
-      
-        Classroom classroom =  ClassroomFactory.createClassroom("A124","155",35,
-                                                                true,"Engineering");
-        Classroom classroom2 =  ClassroomFactory.createClassroom("A246","150","Engineering");
-  
-      
-       //Laeeqah main class code
-
-        Course aCourse = CourseFactory.createCourse(
-                "1234",
-                "Application Development",
-                "ND: ICT",
-                3,
-                "I001"
-        );
-
-        if (aCourse != null) {
-            System.out.println(aCourse);
-        }
-
-        CourseRepository repository = new CourseRepository();
-        repository.addCourse(aCourse);
-
-        Course fetchedCourse = repository.getCourseById("1234");
-        System.out.println("Fetched Course: " + fetchedCourse);
-      
-      
-        //Itumeleng main class Code 
-        Student aStudent = StudentFactory.createStudent(
-                "1999",
-                "Itu",
-                "Male",
-                "Itumeleng@Gmail.com"
-        );
-        if (aStudent != null) {
-            System.out.println(aStudent);
-        }
 
     }
 }
