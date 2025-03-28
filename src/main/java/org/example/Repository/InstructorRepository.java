@@ -6,48 +6,38 @@ import java.util.*;
 public class InstructorRepository implements IInstructorRepository {
     private final Set<Instructor> instructorSet = new HashSet<>();
 
-    public Instructor createInstructor(Instructor instructor) {
+    @Override
+    public Instructor create(Instructor instructor) {
         instructorSet.add(instructor);
         return instructor;
     }
-    public Instructor findInstructorById(String instructorId) {
+
+    @Override
+    public Instructor read(String instructorId) {
         return instructorSet.stream()
                 .filter(instructor -> instructor.getInstructorId().equals(instructorId))
                 .findFirst()
                 .orElse(null);
-
     }
 
-    public boolean deleteInstructor(String instructorId) {
-        return instructorSet.removeIf(course -> course.getInstructorId().equals(instructorId));
+    @Override
+    public Instructor update(Instructor updatedInstructor) {
+        Instructor existingInstructor = read(updatedInstructor.getInstructorId());
+        if (existingInstructor != null) {
+            instructorSet.remove(existingInstructor);
+            instructorSet.add(updatedInstructor);
+            return updatedInstructor;
+        }
+        return null;
     }
 
-    public Set<Instructor> getAllInstructors() {
-        return new HashSet<>(instructorSet);
+    @Override
+    public boolean delete(String instructorId) {
+        return instructorSet.removeIf(instructor -> instructor.getInstructorId().equals(instructorId));
     }
 
     @Override
     public List<Instructor> getAll() {
-        return List.of();
-    }
-
-    @Override
-    public Instructor create(Instructor instructor) {
-        return null;
-    }
-
-    @Override
-    public Instructor read(Integer integer) {
-        return null;
-    }
-
-    @Override
-    public Instructor update(Instructor instructor) {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Integer integer) {
-        return false;
+        return new ArrayList<>(instructorSet);
     }
 }
