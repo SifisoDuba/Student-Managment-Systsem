@@ -2,7 +2,7 @@ package org.example.Util;
 
 public class Helper {
 
-    // Check if a string is null or empty
+
     public static boolean isNullOrEmpty(String value) {
         return (value == null || value.trim().isEmpty());
     }

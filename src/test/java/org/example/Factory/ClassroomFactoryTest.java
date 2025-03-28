@@ -8,7 +8,7 @@ class ClassroomFactoryTest {
 
     @org.junit.jupiter.api.Test
     void createClassroom() {
-        Classroom classroom =  ClassroomFactory.createClassroom("A124","155",35, true,"Engineering");
+        Classroom classroom =  ClassroomFactory.createClassroom("A124","155","35", true,"Engineering");
         assertNotNull(classroom);
     }
 

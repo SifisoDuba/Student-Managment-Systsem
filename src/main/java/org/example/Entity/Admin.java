@@ -6,6 +6,8 @@ public class Admin {
     private String adminName;
     private String adminEmail;
     private String adminRole;
+    private Course course;
+
 
     private Admin(){
 
@@ -16,6 +18,10 @@ public class Admin {
         this.adminName = adminName;
         this.adminEmail = adminEmail;
         this.adminRole = adminRole;
+    }
+
+    public void adminCourse (Course course) {
+        this.course = course;
     }
 
     public String getadminID() {
@@ -61,6 +67,15 @@ public class Admin {
             this.adminEmail = adminEmail;
             this.adminRole = adminRole;
         }
+
+        public Builder copy(Admin admin) {
+            this.adminID = admin.getadminID();
+            this.adminName = admin.getadminName();
+            this.adminEmail = admin.getadminEmail();
+            this.adminRole = admin.getadminRole();
+            return this;
+        }
+
 
         public Builder setadminID(String adminID) {
             this.adminID = adminID;
