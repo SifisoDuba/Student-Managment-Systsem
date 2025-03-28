@@ -1,10 +1,13 @@
 package org.example.Repository;
 
-public interface IRepository<T, ID> {
-    T create(T t);
+public interface IRepository <T, ID> {
 
-    T read(ID id);
+        T create(T t);
 
-    T update(T t);
+        T read(ID id);
 
-    boolean delete(ID id);
+        T update(T t);
+
+        boolean delete(ID id);
+    }
+
