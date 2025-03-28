@@ -74,6 +74,16 @@ public class Instructor {
         public Builder(){
 
         }
+
+        public Builder copy(Instructor instructor) {
+            this.instructorId = instructor.getInstructorId();
+            this.instructorName = instructor.getInstructorName();
+            this.instructorSurname = instructor.getInstructorSurname();
+            this.instructorAddress = instructor.getInstructorAddress();
+            this.specialization = instructor.getSpecialization();
+            this.assignedCourse = instructor.getAssignedCourse();
+            return this;
+        }
         public Builder setInstructorId(String instructorId) {
             this.instructorId = instructorId;
             return this;

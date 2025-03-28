@@ -1,6 +1,7 @@
 package org.example.Factory;
 
 import org.example.Entity.Instructor;
+import org.example.Util.Helper;
 
 import java.util.UUID;
 
@@ -12,6 +13,14 @@ public class InstructorFactory {
                                               String instructorSurname, String instructorAddress,
                                               String specialization, String assignedCourse) {
             String InstructorId = UUID.randomUUID().toString();
+        if (Helper.isNullOrEmpty(instructorId) ||
+                Helper.isNullOrEmpty(instructorName) ||
+                Helper.isNullOrEmpty(instructorSurname) ||
+                Helper.isNullOrEmpty(instructorAddress) ||
+                Helper.isNullOrEmpty(specialization) ||
+                Helper.isNullOrEmpty(assignedCourse)) {
+            return null;
+        }
 
         return new Instructor.Builder()
                 .setInstructorId(instructorId)
@@ -29,6 +38,13 @@ public class InstructorFactory {
     public static Instructor createInstructorDetails(String instructorId,String instructorName,
                                                      String instructorSurname, String instructorAddress) {
                 String InstructorId = UUID.randomUUID().toString();
+
+        if (Helper.isNullOrEmpty(instructorId) ||
+                Helper.isNullOrEmpty(instructorName) ||
+                Helper.isNullOrEmpty(instructorSurname) ||
+                Helper.isNullOrEmpty(instructorAddress)) {
+            return null;
+        }
         return new Instructor.Builder()
 
                 .setInstructorId(instructorId)
@@ -42,6 +58,10 @@ public class InstructorFactory {
 
     public static Instructor createInstructorCareer(String specialization,String assignedCourse) {
 
+        if (    Helper.isNullOrEmpty(specialization) ||
+                Helper.isNullOrEmpty(assignedCourse)) {
+            return null;
+        }
 
         return new Instructor.Builder()
                 .setSpecialization(specialization)

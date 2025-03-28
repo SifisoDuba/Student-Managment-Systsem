@@ -4,7 +4,7 @@ import org.example.Entity.Instructor;
 
 import java.util.List;
 
-public interface IInstructorRepository extends IRepository<Instructor, Integer> {
+public interface IInstructorRepository extends IRepository<Instructor, String> {
 
         List<Instructor> getAll();
 

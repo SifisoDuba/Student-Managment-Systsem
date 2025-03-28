@@ -7,7 +7,6 @@ public class Helper {
         return (value == null || value.trim().isEmpty());
     }
 
-    // Email validation: must contain "@" and "."
     public static boolean isValidEmail(String email) {
         return email.contains("@") && email.contains(".");
     }
