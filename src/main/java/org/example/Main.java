@@ -18,8 +18,7 @@ import org.example.Factory.ClassroomFactory;
 public class Main {
     public static void main(String[] args) {
       
-        //Kgotsofatso main class code
-        Kgotsofatso-Bojatseha-222830190
+ /*       //Kgotsofatso main class code
         System.out.println("fatso");
 
 
@@ -32,14 +31,15 @@ public class Main {
                 "Application Development");
         System.out.println(instructor);
 
-
+*/
         //Sifiso main class code
-      
-        Classroom classroom =  ClassroomFactory.createClassroom("A124","155",35,
-                                                                true,"Engineering");
-        Classroom classroom2 =  ClassroomFactory.createClassroom("A246","150","Engineering");
-  
-      
+
+        Classroom classroom =  ClassroomFactory.createClassroom("C101", "Room 101", "30", true, "Building A");
+        Classroom classroom2 =  ClassroomFactory.createClassroom("A246","Room 150","Accounting");
+
+        System.out.println(classroom);
+        System.out.println(classroom2);
+  /*
        //Laeeqah main class code
 
         Course aCourse = CourseFactory.createCourse(
@@ -71,6 +71,6 @@ public class Main {
         if (aStudent != null) {
             System.out.println(aStudent);
         }
-
+*/
     }
 }
